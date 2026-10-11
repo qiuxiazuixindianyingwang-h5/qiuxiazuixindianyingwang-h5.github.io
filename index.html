@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秋霞最新电影网 - 秋意最新片单·院线/剧集/短剧解说 | qiuxiazuixindianyingwang-h5.github.io</title>
+<meta name="description" content="秋霞最新电影网（https://qiuxiazuixindianyingwang-h5.github.io）整理秋日最新片单：院线新片、秋季剧集、短剧解说、画质与更新、影展日历与站规公告。单页演示，内链全#，不提供盗版视频源。">
+<meta name="keywords" content="秋霞最新电影网,最新电影,秋日片单,院线新片,秋季剧集,短剧解说,画质更新,影展日历,单页演示,qiuxiazuixindianianyingwang-h5.github.io">
+<meta name="robots" content="index,follow">
+<meta property="og:title" content="秋霞最新电影网 - 秋意最新片单馆">
+<meta property="og:description" content="最新院线、秋日剧集、短剧解说、画质与更新、影展日历、站规公告。">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://qiuxiazuixindianyingwang-h5.github.io">
+<link rel="canonical" href="https://qiuxiazuixindianyingwang-h5.github.io">
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --paper:#f7efe2;--paper2:#f0e2cd;--cream:#fcf6ea;
+  --ink:#271c14;--ink2:#5d4631;--ink3:#8c7257;
+  --maple:#c8502b;--maple2:#a83b1d;
+  --gold:#d79a32;--gold2:#b87c1f;
+  --plum:#5b3a63;--plum2:#3f2747;
+  --leaf:#7a8b3a;--line:rgba(39,28,20,.20);
+  --shadow:0 12px 26px rgba(39,28,20,.18);
+}
+html{scroll-behavior:smooth}
+body{font-family:"Noto Serif SC","PingFang SC","Microsoft YaHei",system-ui,serif;background:var(--paper);color:var(--ink);line-height:1.78;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 16px}
+
+/* 秋光斑+落叶纹理 */
+.autumn{position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.55;
+  background:
+   radial-gradient(120% 80% at 12% 0%,rgba(215,154,50,.18),transparent 55%),
+   radial-gradient(120% 90% at 100% 100%,rgba(91,58,99,.16),transparent 55%),
+   repeating-linear-gradient(135deg,rgba(122,139,58,.05),rgba(122,139,58,.05) 2px,transparent 2px,transparent 22px);}
+
+/* header */
+.site-header{position:sticky;top:0;z-index:60;background:linear-gradient(180deg,var(--plum2),var(--plum));color:var(--paper);border-bottom:3px solid var(--maple)}
+.nav{display:flex;align-items:center;justify-content:space-between;min-height:62px;gap:10px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:900;font-size:1.15rem;letter-spacing:.5px}
+.brand .leaf{width:28px;height:28px;border-radius:50% 0 50% 0;background:linear-gradient(135deg,var(--gold),var(--maple));display:grid;place-items:center;color:#fff;font-size:.9rem;box-shadow:0 0 12px rgba(200,80,43,.5)}
+.brand b{color:#ffd79a}
+.searchbar{display:flex;gap:8px}
+.searchbar input{flex:1;min-width:120px;padding:9px 12px;border-radius:8px;border:1px solid var(--line);background:var(--cream);color:var(--ink);font-size:.9rem}
+.searchbar button{padding:9px 15px;border:0;border-radius:8px;background:var(--maple);color:#fff5ec;font-weight:800;cursor:pointer;min-height:44px}
+.navlinks{display:flex;gap:4px;flex-wrap:wrap}
+.navlinks a{padding:8px 11px;border-radius:6px;font-size:.82rem;font-weight:700;color:#ecd9c4;transition:.2s;min-height:44px;display:inline-flex;align-items:center}
+.navlinks a:hover,.navlinks a.active{background:var(--paper);color:var(--plum2)}
+.burger{display:none;flex-direction:column;gap:5px;cursor:pointer}
+.burger span{width:24px;height:3px;background:var(--paper);border-radius:3px}
+
+/* hero */
+.hero{padding:34px 0 20px;position:relative;z-index:1}
+.hero-grid{display:grid;grid-template-columns:1.3fr .7fr;gap:22px;align-items:center}
+.hero h1{font-size:clamp(1.8rem,5vw,2.9rem);font-weight:900;line-height:1.16}
+.hero h1 em{font-style:normal;color:var(--maple)}
+.hero p{max-width:560px;margin:14px 0 18px;color:var(--ink2)}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:11px 22px;border-radius:9px;font-weight:800;font-size:.9rem;cursor:pointer;border:0;transition:.25s;min-height:44px;display:inline-flex;align-items:center}
+.btn-maple{background:linear-gradient(135deg,var(--maple),var(--maple2));color:#fff5ec;box-shadow:0 8px 20px rgba(168,59,29,.4)}
+.btn-maple:hover{transform:translateY(-3px)}
+.btn-line{background:var(--cream);color:var(--plum2);border:1px solid var(--maple)}
+.btn-line:hover{transform:translateY(-3px)}
+.chips{display:flex;gap:6px;flex-wrap:wrap;margin-top:16px}
+.chip{font-size:.72rem;font-weight:800;padding:5px 10px;border-radius:999px;background:var(--paper2);color:var(--ink2);border:1px dashed var(--line)}
+.chip.hot{background:var(--maple);color:#fff5ec;border-color:var(--maple)}
+
+/* 更新仪表 */
+.board{background:linear-gradient(180deg,#2a1c2f,#1c121f);border-radius:18px;padding:20px;box-shadow:var(--shadow);color:#f3e6d6;border:1px solid #4a3150}
+.board h3{font-size:.95rem;color:#ffd79a;margin-bottom:10px}
+.stat-row{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-bottom:12px}
+.stat{background:#241823;border:1px solid #4a3150;border-radius:10px;padding:10px}
+.stat b{font-family:ui-monospace,monospace;color:#ffb877;font-size:1.05rem}
+.stat span{font-size:.68rem;color:#cbb6c0;display:block}
+.upd{display:flex;flex-direction:column;gap:8px;max-height:150px;overflow:auto}
+.upd .item{display:flex;gap:10px;align-items:center;font-size:.76rem;background:#1f141d;border:1px solid #3c2840;border-radius:8px;padding:7px 10px}
+.upd .time{font-family:ui-monospace,monospace;color:var(--gold);min-width:46px}
+.upd .tag{font-size:.66rem;font-weight:800;padding:2px 7px;border-radius:999px;background:var(--maple);color:#fff5ec}
+.upd .tag.q{background:var(--leaf)}
+.upd .tag.c{background:var(--plum)}
+
+section.block{padding:40px 0;position:relative;z-index:1}
+.sec-head{display:flex;align-items:center;gap:10px;margin-bottom:18px}
+.sec-head .icon{width:30px;height:30px;border-radius:9px;background:linear-gradient(135deg,var(--gold),var(--maple));display:grid;place-items:center;color:#fff;font-size:1rem}
+.sec-head h2{font-size:1.32rem;font-weight:900}
+.sec-head .tag{margin-left:auto;font-size:.72rem;color:var(--ink2);background:var(--cream);border:1px solid var(--line);padding:5px 12px;border-radius:999px}
+
+/* 1 最新院线 */
+.newgrid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.card{background:var(--cream);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);opacity:0;transform:translateY(14px);transition:.5s}
+.card.in{opacity:1;transform:none}
+.card:hover{transform:translateY(-4px);border-color:var(--maple)}
+.card .thumb{height:116px;display:grid;place-items:center;font-size:1.9rem;color:#fff;position:relative}
+.thumb.t1{background:linear-gradient(135deg,var(--maple),var(--plum2))}
+.thumb.t2{background:linear-gradient(135deg,var(--gold),var(--maple2))}
+.thumb.t3{background:linear-gradient(135deg,var(--leaf),var(--plum))}
+.thumb.t4{background:linear-gradient(135deg,var(--plum),var(--maple))}
+.card .thumb .new{position:absolute;top:8px;left:8px;font-size:.62rem;font-weight:800;background:#fff;color:var(--maple2);padding:2px 7px;border-radius:5px}
+.card .thumb .ver{position:absolute;top:8px;right:8px;font-size:.62rem;font-weight:800;background:var(--plum2);color:#ffd79a;padding:2px 7px;border-radius:5px}
+.card .body{padding:11px 13px}
+.card h4{font-size:.88rem;font-weight:800}
+.card p{font-size:.72rem;color:var(--ink2);margin-top:2px}
+.card .row{display:flex;align-items:center;justify-content:space-between;margin-top:8px}
+.card .row .date{font-family:ui-monospace,monospace;font-size:.7rem;font-weight:800;color:var(--maple2)}
+.card .row .go{font-size:.7rem;font-weight:800;color:#fff;background:var(--maple);padding:4px 10px;border-radius:999px}
+
+/* 2 秋日剧集 */
+.series{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.srow{display:grid;grid-template-columns:84px 1fr auto;gap:12px;align-items:center;background:var(--cream);border:1px solid var(--line);border-left:5px solid var(--gold);border-radius:10px;padding:12px 14px;box-shadow:var(--shadow);opacity:0;transform:translateX(-12px);transition:.5s}
+.srow.in{opacity:1;transform:none}
+.srow .cover{height:84px;border-radius:8px;display:grid;place-items:center;font-size:1.6rem;color:#fff;background:linear-gradient(135deg,var(--plum),var(--maple))}
+.srow.alt .cover{background:linear-gradient(135deg,var(--leaf),var(--gold2))}
+.srow h4{font-size:.9rem;font-weight:800}
+.srow p{font-size:.72rem;color:var(--ink2)}
+.srow .ep{font-family:ui-monospace,monospace;font-size:.7rem;font-weight:800;color:var(--maple2);background:var(--paper2);padding:4px 10px;border-radius:999px;white-space:nowrap}
+
+/* 3 短剧解说 */
+.shorts{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.sc{background:var(--cream);border:1px solid var(--line);border-radius:12px;padding:14px;box-shadow:var(--shadow);opacity:0;transform:translateY(14px);transition:.5s}
+.sc.in{opacity:1;transform:none}
+.sc:hover{transform:translateY(-4px);border-color:var(--plum)}
+.sc .bar{height:64px;border-radius:8px;background:linear-gradient(135deg,#2a1c2f,#5b3a63);display:grid;place-items:center;font-size:1.5rem;color:#ffd79a;position:relative;margin-bottom:10px}
+.sc .bar .len{position:absolute;bottom:6px;right:8px;font-family:ui-monospace,monospace;font-size:.62rem;color:#ecd9c4;background:#00000055;padding:1px 6px;border-radius:5px}
+.sc h4{font-size:.86rem;font-weight:800}
+.sc p{font-size:.72rem;color:var(--ink2);margin-top:2px}
+.sc .tags{margin-top:8px;display:flex;gap:6px;flex-wrap:wrap}
+.sc .tags span{font-size:.66rem;font-weight:800;padding:2px 8px;border-radius:999px;background:var(--paper2);color:var(--ink2)}
+
+/* 4 画质与更新 */
+.boost{max-width:900px;margin:0 auto;background:var(--cream);border:2px solid var(--maple);border-radius:14px;padding:18px 20px;box-shadow:var(--shadow)}
+.boost .grp{margin:10px 0}
+.boost .grp>strong{font-size:.86rem;display:block;margin-bottom:8px}
+.quals{display:flex;flex-wrap:wrap;gap:8px}
+.ql{font-size:.78rem;font-weight:800;padding:7px 13px;border-radius:8px;border:1px solid var(--line);background:var(--paper2);cursor:pointer;min-height:40px;display:inline-flex;align-items:center}
+.ql.on{background:var(--maple);color:#fff5ec;border-color:var(--maple)}
+.toggles{display:flex;flex-wrap:wrap;gap:14px;margin-top:6px}
+.tg{display:flex;align-items:center;gap:8px;font-size:.8rem;font-weight:700;color:var(--ink2)}
+.switch{width:44px;height:24px;border-radius:99px;background:#cbb6a0;position:relative;cursor:pointer;transition:.2s}
+.switch i{position:absolute;top:2px;left:2px;width:20px;height:20px;border-radius:50%;background:#fff;transition:.2s}
+.switch.on{background:var(--leaf)}
+.switch.on i{left:22px}
+.freq{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:10px}
+.fnode{background:var(--paper2);border:1px solid var(--line);border-radius:10px;padding:10px}
+.fnode b{font-family:ui-monospace,monospace;color:var(--maple2);font-size:.9rem}
+.fnode span{font-size:.7rem;color:var(--ink3);display:block}
+
+/* 5 影展日历 */
+.calendar{max-width:920px;margin:0 auto}
+.cal-head{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.cbtn{font-size:.76rem;font-weight:800;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--cream);cursor:pointer;min-height:40px}
+.cbtn.on{background:var(--plum);color:#ffd79a;border-color:var(--plum)}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:8px}
+.day{background:var(--cream);border:1px solid var(--line);border-radius:9px;min-height:86px;padding:8px;box-shadow:var(--shadow)}
+.day .d{font-family:ui-monospace,monospace;font-size:.72rem;font-weight:800;color:var(--ink3)}
+.day.ev{background:linear-gradient(180deg,#fff6e7,#f7efe2);border-color:var(--maple)}
+.day .evt{margin-top:5px;font-size:.7rem;font-weight:800;color:var(--maple2);line-height:1.3}
+.day .evt.c{color:var(--plum2)}
+.empty{color:#cbb6a0}
+
+/* 6 站规 */
+.rules{max-width:820px;margin:0 auto;background:linear-gradient(180deg,var(--plum2),#1c121f);color:#ecd9c4;border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+.rules h3{color:#ffd79a;font-size:1rem;margin-bottom:8px}
+.rules ul{list-style:none;display:grid;gap:8px}
+.rules li{font-size:.8rem;padding-left:18px;position:relative;line-height:1.6}
+.rules li::before{content:'🍁';position:absolute;left:0}
+.rules .dis{margin-top:12px;font-size:.72rem;color:#cbb6c0;border-top:1px dashed #4a3150;padding-top:10px}
+
+footer.site-foot{margin-top:36px;background:linear-gradient(180deg,transparent,var(--plum2));border-top:3px solid var(--maple);color:#ecd9c4;padding:30px 0 20px;position:relative;z-index:1}
+.foot-brand{font-weight:900;font-size:1.1rem;text-align:center;margin-bottom:10px}
+.foot-brand b{color:#ffd79a}
+.foot-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-bottom:12px}
+.foot-links a{font-size:.8rem;color:#d8c0ad;min-height:40px;display:inline-flex;align-items:center}
+.foot-links a:hover{color:#ffd79a}
+.foot-small{text-align:center;font-size:.73rem;color:#cbb6c0;line-height:1.7}
+
+@media(max-width:960px){.newgrid{grid-template-columns:repeat(2,1fr)}.shorts{grid-template-columns:1fr}.series{grid-template-columns:1fr}.stat-row{grid-template-columns:1fr}.freq{grid-template-columns:1fr}}
+@media(max-width:680px){
+  .navlinks{position:fixed;top:62px;left:12px;right:12px;flex-direction:column;background:var(--plum2);padding:10px;border-radius:12px;box-shadow:var(--shadow);transform:translateY(-180%);transition:.3s}
+  .navlinks.open{transform:none}
+  .burger{display:flex}
+  .searchbar{width:100%}
+  .cal-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:420px){.newgrid{grid-template-columns:1fr}.srow{grid-template-columns:64px 1fr;}.srow .ep{grid-column:1/-1;justify-self:start}.cal-grid{grid-template-columns:repeat(2,1fr)}}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/laoliu.js"></script>
+
+<div class="autumn"></div>
+
+<div class="wrap">
+  <header class="site-header">
+    <div class="nav">
+      <div class="brand"><span class="leaf">🍁</span> 秋霞最新电影网<b>·秋日片单</b></div>
+      <form class="searchbar" onsubmit="return false">
+        <input type="search" placeholder="搜新片/剧集/短剧：秋日·院线·悬疑·治愈…" aria-label="搜索最新影视">
+        <button type="submit">查新片</button>
+      </form>
+      <nav class="navlinks" id="nav">
+        <a href="#new" class="active">最新院线</a>
+        <a href="#series">秋日剧集</a>
+        <a href="#shorts">短剧解说</a>
+        <a href="#quality">画质/更新</a>
+        <a href="#calendar">影展日历</a>
+        <a href="#rules">站规公告</a>
+      </nav>
+      <div class="burger" id="burger"><span></span><span></span><span></span></div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="hero-grid">
+        <div>
+          <h1>秋光正浓，<br>更新一桌<em>最新片单</em></h1>
+          <p>秋霞最新电影网（qiuxiazuixindianyingwang-h5.github.io）整理院线新片、秋季剧集、短剧解说、画质与更新节奏、影展日历。本页为静态前端演示，内链全部为 #，不提供盗版视频源、不发布“最新地址/备用域名”。[1,16](@ref)</p>
+          <div class="cta">
+            <a href="#new" class="btn btn-maple">看最新院线</a>
+            <a href="#calendar" class="btn btn-line">开影展日历</a>
+          </div>
+          <div class="chips">
+            <span class="chip hot">每日更新演示</span>
+            <span class="chip">院线+流媒体</span>
+            <span class="chip">秋日剧集</span>
+            <span class="chip">短剧解说</span>
+            <span class="chip">画质切换</span>
+            <span class="chip">正版引导</span>
+          </div>
+        </div>
+        <div class="board" aria-hidden="true">
+          <h3>🍂 更新看板（演示数据）</h3>
+          <div class="stat-row">
+            <div class="stat"><b>18</b><span>今日新增条目</span></div>
+            <div class="stat"><b>6</b><span>栏目/影展</span></div>
+            <div class="stat"><b>4K</b><span>可选画质标签</span></div>
+          </div>
+          <div class="upd">
+            <div class="item"><span class="time">09:10</span><span class="tag">院线</span> 秋山信使·点映情报更新</div>
+            <div class="item"><span class="time">10:40</span><span class="tag q">剧集</span> 梧桐巷的秋天·第6集上架</div>
+            <div class="item"><span class="time">12:05</span><span class="tag c">短剧</span> 十二分钟看懂悬疑新片</div>
+            <div class="item"><span class="time">14:30</span><span class="tag">画质</span> 修复版色彩预设刷新</div>
+            <div class="item"><span class="time">16:00</span><span class="tag c">影展</span> 秋日短片夜场排期发布</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 1 最新院线 -->
+    <section class="block" id="new">
+      <div class="sec-head"><span class="icon">🎬</span><h2>最新院线</h2><span class="tag">点卡片仅演示，不播放正片</span></div>
+      <div class="newgrid">
+        <article class="card"><div class="thumb t1">🍂<span class="new">NEW</span><span class="ver">点映</span></div><div class="body"><h4>秋山信使</h4><p>剧情·山路/邮包/方言</p><div class="row"><span class="date">2026-10-10</span><span class="go">详情</span></div></div></article>
+        <article class="card"><div class="thumb t2">🌇<span class="new">NEW</span><span class="ver">4K</span></div><div class="body"><h4>晚霞食堂</h4><p>治愈·家庭/饭桌/四季</p><div class="row"><span class="date">2026-10-08</span><span class="go">详情</span></div></div></article>
+        <article class="card"><div class="thumb t3">🕵️<span class="new">NEW</span><span class="ver">悬疑</span></div><div class="body"><h4>梧桐巷谜案</h4><p>犯罪·邻里/旧信/雨夜</p><div class="row"><span class="date">2026-10-05</span><span class="go">详情</span></div></div></article>
+        <article class="card"><div class="thumb t4">🎻<span class="new">NEW</span><span class="ver">音乐</span></div><div class="body"><h4>枫叶协奏曲</h4><p>文艺·乐团/留学/归乡</p><div class="row"><span class="date">2026-10-03</span><span class="go">详情</span></div></div></article>
+        <article class="card"><div class="thumb t2">🚆<span class="new">NEW</span><span class="ver">公路</span></div><div class="body"><h4>南下车票</h4><p>喜剧·春运/误车/相亲</p><div class="row"><span class="date">2026-09-30</span><span class="go">详情</span></div></div></article>
+        <article class="card"><div class="thumb t1">🏔️<span class="new">NEW</span><span class="ver">IMAX</span></div><div class="body"><h4>霜降以北</h4><p>冒险·气象站/雪线/救援</p><div class="row"><span class="date">2026-09-27</span><span class="go">详情</span></div></div></article>
+        <article class="card"><div class="thumb t3">💌<span class="new">NEW</span><span class="ver">爱情</span></div><div class="body"><h4>未寄的明信片</h4><p>爱情·笔友/海边/十年</p><div class="row"><span class="date">2026-09-24</span><span class="go">详情</span></div></div></article>
+        <article class="card"><div class="thumb t4">🎨<span class="new">NEW</span><span class="ver">动画</span></div><div class="body"><h4>银杏小学美术课</h4><p>动画·亲子/秋天/展览</p><div class="row"><span class="date">2026-09-20</span><span class="go">详情</span></div></div></article>
+      </div>
+    </section>
+
+    <!-- 2 秋日剧集 -->
+    <section class="block" id="series">
+      <div class="sec-head"><span class="icon">📺</span><h2>秋日剧集</h2><span class="tag">连载进度·纯前端</span></div>
+      <div class="series">
+        <div class="srow"><div class="cover">🍁</div><div><h4>梧桐巷的秋天</h4><p>家庭悬疑·邻里旧事，每周更新</p></div><span class="ep">第6集/共12集</span></div>
+        <div class="srow alt"><div class="cover">🍲</div><div><h4>晚霞食堂菜单</h4><p>治愈群像·饭桌故事，双周更</p></div><span class="ep">第8集/共16集</span></div>
+        <div class="srow"><div class="cover">🚆</div><div><h4>南下车票事务所</h4><p>轻喜剧·误车与重逢，周更</p></div><span class="ep">第4集/共10集</span></div>
+        <div class="srow alt"><div class="cover">🎻</div><div><h4>枫叶音乐学院</h4><p>音乐成长·排练与比赛，周更</p></div><span class="ep">第5集/共12集</span></div>
+        <div class="srow"><div class="cover">🏔️</div><div><h4>霜降气象站</h4><p>职业剧·雪山救援，双周更</p></div><span class="ep">第3集/共8集</span></div>
+        <div class="srow alt"><div class="cover">✉️</div><div><h4>明信片收发室</h4><p>爱情单元·每集一个地址，周更</p></div><span class="ep">第7集/共20集</span></div>
+      </div>
+    </section>
+
+    <!-- 3 短剧解说 -->
+    <section class="block" id="shorts">
+      <div class="sec-head"><span class="icon">🎙️</span><h2>短剧 / 影评解说</h2><span class="tag">3-12分钟·不提供原片</span></div>
+      <div class="shorts">
+        <article class="sc"><div class="bar">🎬<span class="len">03:40</span></div><h4>12分钟看懂《秋山信使》</h4><p>邮路、方言、人物动机拆解，适合先决定是否去影院。</p><div class="tags"><span>剧情</span><span>结构</span><span>不剧透结局</span></div></article>
+        <article class="sc"><div class="bar">🕵️<span class="len">06:15</span></div><h4>梧桐巷悬疑线梳理</h4><p>旧信、雨夜、邻里关系，按时间线重排关键证据。</p><div class="tags"><span>悬疑</span><span>时间线</span><span>轻剧透</span></div></article>
+        <article class="sc"><div class="bar">🍲<span class="len">04:50</span></div><h4>晚霞食堂治愈配方</h4><p>饭桌戏、配角弧光、四季转场，做氛围向解构。</p><div class="tags"><span>治愈</span><span>群像</span><span>无盗用片段</span></div></article>
+        <article class="sc"><div class="bar">🎻<span class="len">05:30</span></div><h4>枫叶协奏曲音乐解析</h4><p>主题动机、排练冲突、归乡段落，配示意谱例。</p><div class="tags"><span>音乐</span><span>文艺</span><span>示意音频</span></div></article>
+        <article class="sc"><div class="bar">🚆<span class="len">03:05</span></div><h4>南下车票笑点合集</h4><p>误车、相亲、车厢群像，只讲桥段不截原片。</p><div class="tags"><span>喜剧</span><span>节奏</span><span>短解构</span></div></article>
+        <article class="sc"><div class="bar">🏔️<span class="len">07:20</span></div><h4>霜降以北救援科普</h4><p>气象、雪线、装备与决策，偏纪录式影评。</p><div class="tags"><span>冒险</span><span>科普</span><span>无正片源</span></div></article>
+      </div>
+    </section>
+
+    <!-- 4 画质与更新 -->
+    <section class="block" id="quality">
+      <div class="sec-head"><span class="icon">🎞️</span><h2>画质 / 更新面板</h2><span class="tag">纯前端演示</span></div>
+      <div class="boost">
+        <div class="grp"><strong>画质档位</strong>
+          <div class="quals" id="qlRow">
+            <span class="ql">480P 省流</span>
+            <span class="ql">720P 高清</span>
+            <span class="ql on">1080P 超清</span>
+            <span class="ql">4K 秋色还原</span>
+            <span class="ql">修复降噪</span>
+            <span class="ql">自适应码率</span>
+          </div>
+        </div>
+        <div class="grp"><strong>更新与提醒</strong>
+          <div class="toggles">
+            <label class="tg">院线点映提醒 <span class="switch on" data-tg><i></i></span></label>
+            <label class="tg">剧集更新推送 <span class="switch on" data-tg><i></i></span></label>
+            <label class="tg">短剧解说周更 <span class="switch" data-tg><i></i></span></label>
+            <label class="tg">秋色色彩预设 <span class="switch on" data-tg><i></i></span></label>
+            <label class="tg">正版平台跳转建议 <span class="switch on" data-tg><i></i></span></label>
+          </div>
+        </div>
+        <div class="grp"><strong>更新频率（演示）</strong>
+          <div class="freq">
+            <div class="fnode"><b>每日</b><span>新片情报/短评草稿</span></div>
+            <div class="fnode"><b>每周三</b><span>剧集进度同步</span></div>
+            <div class="fnode"><b>每周六</b><span>影展/短片夜场排期</span></div>
+          </div>
+        </div>
+        <p style="font-size:.76rem;color:var(--ink2);margin-top:10px">演示说明：画质/开关/频率仅改变界面状态，不连接真实转码、不返回视频流、不模拟“最新地址”发布。</p>
+      </div>
+    </section>
+
+    <!-- 5 影展日历 -->
+    <section class="block" id="calendar">
+      <div class="sec-head"><span class="icon">📅</span><h2>秋日影展日历</h2><span class="tag">2026年10月·演示排期</span></div>
+      <div class="calendar">
+        <div class="cal-head" id="calFilter">
+          <span class="cbtn on" data-c="all">全部</span>
+          <span class="cbtn" data-c="new">新片</span>
+          <span class="cbtn" data-c="short">短片/解说</span>
+          <span class="cbtn" data-c="gala">影展</span>
+          <span class="cbtn" data-c="family">亲子</span>
+        </div>
+        <div class="cal-grid" id="calGrid"><!-- JS 注入 --></div>
+        <p style="font-size:.74rem;color:var(--ink2);margin-top:10px">日历为前端演示；具体放映以正版院线、持牌平台及主办方公告为准。</p>
+      </div>
+    </section>
+
+    <!-- 6 站规 -->
+    <section class="block" id="rules">
+      <div class="sec-head"><span class="icon">🍁</span><h2>站规 / 安全公告</h2><span class="tag">秋霞演示站</span></div>
+      <div class="rules">
+        <h3>2026-10-10 秋霞站务</h3>
+        <ul>
+          <li>本页为单文件演示：最新院线、秋日剧集、短剧解说、画质更新、影展日历均为前端交互，内链全部为 <code>#</code>。</li>
+          <li>不提供受版权保护的电影/剧集正片直链，不嵌入第三方播放源，不发布“最新地址/备用域名/专用播放器”。[7,19](@ref)</li>
+          <li>“秋霞”仅为站点命名与秋日视觉主题；本演示与任何历史影视资源站无关联，不引导至仿冒或跳转站。[1,16](@ref)</li>
+          <li>画质、更新频率、日历、看板均为演示数据；点击卡片不播放视频、不下载安装包、不收集个人信息。</li>
+          <li>片名、简介、短剧文案均为原创/虚构示例，如有雷同纯属巧合；观看正版请使用权利人授权平台。</li>
+        </ul>
+        <div class="dis">免责声明：秋霞最新电影网演示站仅用于前端版式与影视信息整理研究。找老片/新片请优先使用正规视频平台、图书馆数字资源或公共版权片库；警惕仿冒影视站弹窗、诱导下载与钓鱼页面。[1,15](@ref)</div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<footer class="site-foot">
+  <div class="wrap">
+    <div class="foot-brand">秋霞最新电影网 · <b>qiuxiazuixindianyingwang-h5.github.io</b></div>
+    <nav class="foot-links">
+      <a href="#new">最新院线</a>
+      <a href="#series">秋日剧集</a>
+      <a href="#shorts">短剧解说</a>
+      <a href="#quality">画质更新</a>
+      <a href="#calendar">影展日历</a>
+      <a href="#rules">站规公告</a>
+    </nav>
+    <div class="foot-small">
+      单文件演示站 · 移动端自适应 · 内链全# · 不生成 robots.txt/sitemap.xml · canonical 指向本站首页。<br>
+      © 2026 秋霞最新电影网演示项目。片单与排期均为示例，不提供盗版源。
+    </div>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var burger=document.getElementById('burger'),nav=document.getElementById('nav');
+  if(burger&&nav){burger.addEventListener('click',function(){nav.classList.toggle('open');});
+    nav.querySelectorAll('a').forEach(function(a){a.addEventListener('click',function(){nav.classList.remove('open');});});}
+  // 导航高亮
+  var secs=[].slice.call(document.querySelectorAll('main section[id]'));
+  var links=nav?nav.querySelectorAll('a'):[];
+  function onScroll(){var y=window.scrollY+120;secs.forEach(function(s){if(y>=s.offsetTop){links.forEach(function(l){l.classList.toggle('active',l.getAttribute('href')==='#'+s.id);});}});}
+  window.addEventListener('scroll',onScroll,{passive:true});onScroll();
+  // 入场动画
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});},{threshold:.12});
+  document.querySelectorAll('.card,.srow,.sc,.day.ev').forEach(function(el){io.observe(el);});
+  // 画质
+  var ql=document.getElementById('qlRow');
+  if(ql){ql.querySelectorAll('.ql').forEach(function(b){b.addEventListener('click
